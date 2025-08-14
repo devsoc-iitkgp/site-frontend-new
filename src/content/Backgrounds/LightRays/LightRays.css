@@ -1,0 +1,17 @@
+.light-rays-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.fullpage-rays {
+  width: 100%;
+  height: 100vh;
+}
+
+.fullpage-rays canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

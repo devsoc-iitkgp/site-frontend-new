@@ -1,0 +1,90 @@
+.animation4-container {
+  position: relative; /* Changed from absolute to relative */
+  width: 100%;
+  height: 300px; /* Increased height */
+  z-index: 5;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.animation4-element {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  opacity: 0;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-in;
+}
+
+.animation4-element.animate-in {
+  opacity: 1;
+  animation: float 6s ease-in-out infinite;
+}
+
+.circle-large {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(79, 91, 255, 0.2), rgba(164, 70, 227, 0.2));
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  top: 10px;
+  left: 10px;
+}
+
+.circle-medium {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(79, 91, 255, 0.3), rgba(164, 70, 227, 0.3));
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  top: 30px;
+  left: 30px;
+  animation: rotate 8s linear infinite;
+}
+
+.circle-small {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(79, 91, 255, 0.5), rgba(164, 70, 227, 0.5));
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  top: 60px;
+  left: 60px;
+  animation: rotate 5s linear infinite reverse;
+}
+
+.devsoc-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(79, 91, 255, 0.8);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

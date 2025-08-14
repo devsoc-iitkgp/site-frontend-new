@@ -1,0 +1,67 @@
+.terminal-container {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.terminal-content {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(138, 43, 226, 0.4) rgba(8, 8, 27, 0.4);
+}
+
+.terminal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terminal-content::-webkit-scrollbar-track {
+  background: rgba(8, 8, 27, 0.4);
+}
+
+.terminal-content::-webkit-scrollbar-thumb {
+  background-color: rgba(138, 43, 226, 0.4);
+  border-radius: 6px;
+}
+
+.terminal-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.terminal-btn.red {
+  background-color: #ff5f56;
+}
+
+.terminal-btn.yellow {
+  background-color: #ffbd2e;
+}
+
+.terminal-btn.green {
+  background-color: #27c93f;
+}
+
+/* Define the blinking animation in CSS instead of using Chakra UI keyframes */
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.cursor-blink {
+  animation: blink 1s infinite;
+  vertical-align: middle;
+}
+
+.cursor {
+  vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+  .terminal-container {
+    height: 250px !important;
+  }
+  
+  .terminal-content {
+    font-size: 12px;
+  }
+}

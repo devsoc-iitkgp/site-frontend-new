@@ -1,0 +1,75 @@
+.code-comparison-container {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.code-comparison-tabs {
+  background-color: rgba(16, 16, 40, 0.6);
+}
+
+.code-content-mobile pre, 
+.code-content-desktop pre {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(138, 43, 226, 0.4) rgba(8, 8, 27, 0.4);
+}
+
+.code-content-mobile pre::-webkit-scrollbar, 
+.code-content-desktop pre::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.code-content-mobile pre::-webkit-scrollbar-track, 
+.code-content-desktop pre::-webkit-scrollbar-track {
+  background: rgba(8, 8, 27, 0.4);
+}
+
+.code-content-mobile pre::-webkit-scrollbar-thumb, 
+.code-content-desktop pre::-webkit-scrollbar-thumb {
+  background-color: rgba(138, 43, 226, 0.4);
+  border-radius: 6px;
+}
+
+.after-code {
+  position: relative;
+}
+
+.after-code::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(138, 43, 226, 0.05) 0%, rgba(138, 43, 226, 0) 100%);
+  pointer-events: none;
+}
+
+/* Line highlight for improved code comparison */
+.highlighted-line {
+  background-color: rgba(138, 43, 226, 0.2);
+  display: block;
+}
+
+/* Add shine effect on hover */
+.code-comparison-container:hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent 45%, rgba(255, 255, 255, 0.1) 50%, transparent 55%);
+  background-size: 200% 200%;
+  animation: shine 2s infinite;
+  pointer-events: none;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

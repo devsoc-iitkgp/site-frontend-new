@@ -1,0 +1,359 @@
+/* Background elements styles */
+.background-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  pointer-events: none; /* Allow clicking through to content */
+}
+
+.plasma-wave-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hyperspeed-container {
+  position: absolute;
+  width: 100%;
+  height: 70%;
+  opacity: 0.7; /* Adjust opacity to blend with plasma wave */
+  mix-blend-mode: screen; /* Create interesting visual blend */
+}
+
+/* Ensure content is above backgrounds */
+.landing-content, 
+.hero-main-content,
+.landing-button {
+  position: relative;
+  z-index: 10;
+}
+
+/* Content container styles */
+.content-container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Centered content styles */
+.centered-content {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  padding: 2rem !important;
+  margin: 3rem auto !important;
+  text-align: center !important;
+}
+
+.text-center {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Enlarged text styles */
+.enlarged-title {
+  font-size: 4.5rem !important;
+  line-height: 1.2 !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5) !important;
+  margin-bottom: 2rem !important;
+}
+
+.enlarged-subtitle {
+  font-size: 1.8rem !important;
+  line-height: 1.5 !important;
+  max-width: 800px !important;
+  margin: 0 auto 3rem auto !important;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Super-enlarged text styles */
+.super-enlarged-title {
+  font-size: 6rem !important;
+  line-height: 1.1 !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.03em !important;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.6) !important;
+  margin-bottom: 2.5rem !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+
+.super-enlarged-subtitle {
+  font-size: 2.2rem !important;
+  line-height: 1.4 !important;
+  max-width: 900px !important;
+  margin: 0 auto 4rem auto !important;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.4) !important;
+}
+
+.main-title {
+  font-size: 1.2em !important; /* Relative to parent for better scaling */
+}
+
+.subtitle {
+  font-size: 0.8em !important;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+
+
+.enlarged-button {
+  font-size: 1.25rem !important;
+  padding: 1rem 2rem !important;
+  border-radius: 50px !important;
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.5) !important;
+}
+
+.super-enlarged-button {
+  font-size: 1.5rem !important;
+  padding: 1.25rem 3rem !important;
+  border-radius: 60px !important;
+  box-shadow: 0 0 25px rgba(138, 43, 226, 0.6) !important;
+  text-align: center !important;
+  position: relative !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-top: 1rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.super-enlarged-button:hover {
+  transform: translateX(-50%) scale(1.05) !important;
+  box-shadow: 0 0 30px rgba(138, 43, 226, 0.8) !important;
+}
+
+.button-arrow-circle {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
+  background: rgba(138, 43, 226, 0.8);
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+
+/* Make text more visible against animations */
+.hero-split {
+  display: inline-block;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+  margin: 0 -0.05em;
+}
+
+/* Add glow effect to improve text visibility */
+.landing-title, .landing-subtitle {
+  position: relative;
+}
+
+.landing-title::after, .landing-subtitle::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .enlarged-title {
+    font-size: 3rem !important;
+  }
+
+  .enlarged-subtitle {
+    font-size: 1.4rem !important;
+  }
+  
+  .enlarged-button {
+    font-size: 1.1rem !important;
+  }
+
+  .super-enlarged-title {
+    font-size: 3.5rem !important;
+  }
+
+  .super-enlarged-subtitle {
+    font-size: 1.6rem !important;
+    margin-bottom: 3rem !important;
+  }
+  
+  .super-enlarged-button {
+    font-size: 1.25rem !important;
+    padding: 1rem 2rem !important;
+  }
+}
+
+/* Enhanced centering styles */
+.full-width-center {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+.center-aligned {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Improved title centering */
+.landing-title {
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+
+/* Make sure subcomponents are also centered */
+.feature-cards,
+.testimonials,
+.start-building {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* Make hero content specifically centered */
+.landing-content.centered-content .hero-main-content,
+.landing-content.centered-content .hero-main-content h1,
+.landing-content.centered-content .hero-main-content .landing-subtitle {
+  text-align: center !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.hero-main-content {
+  text-align: center !important;
+  width: 100% !important;
+  max-width: 1200px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* About and Contact page specific styles */
+.text-gradient {
+  background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+.text-gradient::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Contact form focus styles */
+input:focus, textarea:focus {
+  outline: none;
+  border-color: rgba(138, 43, 226, 0.6) !important;
+}
+
+/* Card hover effects */
+.hover-card {
+  transition: all 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(138, 43, 226, 0.4) !important;
+}
+
+/* Team image effects */
+img {
+  transition: all 0.5s ease;
+}
+
+img:hover {
+  transform: scale(1.02);
+}
+
+/* Magic CUI section styles */
+.magic-cui-section {
+  position: relative;
+  z-index: 10;
+  margin-top: 2rem;
+}
+
+.magic-cui-section::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: 0;
+  right: 0;
+  height: calc(100% + 60px);
+  background: radial-gradient(ellipse at center, rgba(138, 43, 226, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 20px;
+}
+
+/* Create floating effect on hover */
+.terminal-container:hover,
+.code-comparison-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(138, 43, 226, 0.4) !important;
+  transition: all 0.3s ease;
+}
+
+/* Add smooth transition for all hover effects */
+.terminal-container,
+.code-comparison-container {
+  transition: all 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .magic-cui-section {
+    margin-top: 1rem;
+  }
+  
+  .magic-cui-section > div:first-child {
+    margin-bottom: 2rem;
+  }
+}

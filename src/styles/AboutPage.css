@@ -2,7 +2,7 @@
   padding: 2rem 1rem;
   max-width: 1200px;
   margin: 0 auto;
-  color: #333;
+  color: #f1eded;
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
 }
@@ -57,6 +57,7 @@
 }
 
 .animated-intro {
+  display: inline-block;
   margin-bottom: 2rem;
 }
 
@@ -66,17 +67,25 @@
 }
 
 .highlight {
+  display: inline-block;
   position: relative;
+  min-width: 13ch;
+  vertical-align: middle;             /* reserve space for widest word */
+  text-align: center;
+  line-height: 0;
   color: #4F46E5;
-  font-weight: 700;
 }
 
 .animated-word {
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: 4rem;
 }
 
 .intro-text {
-  max-width: 700px;
+  max-width: 1000px;
   line-height: 1.7;
   font-size: 1.2rem;
   margin-top: 1.5rem;

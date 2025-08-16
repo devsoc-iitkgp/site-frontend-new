@@ -23,26 +23,39 @@ const Hero = () => {
 
   return (
     <Center className="full-width-center" w="100%" py={{ base: 12, md: 20 }}>
-      <Box className="landing-content centered-content" width={{ base: "95%", md: "90%", lg: "80%" }} maxW="1400px" mx="auto">
-        <Flex 
-          direction={{ base: "column", md: "row" }} 
-          align="center" 
-          justify="space-between"
+      <Box
+        className="landing-content centered-content"
+        width={{ base: "95%", md: "90%", lg: "80%" }}
+        maxW="1400px"
+        mx="auto"
+      >
+        <Flex
+          direction="column" // stacked layout
+          align="center"     // center horizontally
+          justify="center"
+          textAlign="center" // center text
           position="relative"
         >
-          {/* Left side: Hero Text Content */}
-          <Box 
-            flex={{ md: "1" }} 
-            textAlign={{ base: "center", md: "left" }} 
-            pr={{ md: 10 }}
-            width={{ base: "100%", md: "auto" }}
-          >
-            <Flex direction="column" align={{ base: "center", md: "flex-start" }} className="hero-main-content">
+          {/* Hero Text Content */}
+          <Box width="100%">
+            <Flex
+              direction="column"
+              align="center"
+              className="hero-main-content"
+            >
+              {/* Title */}
               <Box className="title-container" mb={8}>
-                <h1 className="landing-title super-enlarged-title" style={{ fontSize: "calc(2.5rem + 2vw)", lineHeight: 1.2 }}>
+                <h1
+                  className="landing-title super-enlarged-title"
+                  style={{
+                    fontSize: "calc(2.5rem + 2vw)",
+                    lineHeight: 1.2,
+                    textAlign: "center",
+                  }}
+                >
                   <ResponsiveSplitText
                     isMobile={isMobile}
-                    text="DevSoc Society"
+                    text="Developer Society"
                     className="hero-split main-title"
                     splitType="chars"
                     delay={30}
@@ -63,25 +76,19 @@ const Hero = () => {
                 </h1>
               </Box>
 
-              <Text 
-                fontSize={{ base: "lg", md: "xl", lg: "2xl" }} 
-                maxW={{ base: "800px", md: "100%" }}
-                mx={{ base: "auto", md: 0 }}
-                mb={10}
-                fontWeight="medium"
-                color="whiteAlpha.900"
-              >
-                <ResponsiveSplitText
-                  isMobile={isMobile}
-                  splitType="words"
-                  delay={10}
-                  duration={1}
-                  text="A community of passionate student developers building the next generation of technology leaders"
-                />
-              </Text>
 
-              <Flex className="button-container" width="100%" justifyContent={{ base: "center", md: "flex-start" }}>
-                <Link to={"/join-us"} className="landing-button super-enlarged-button" style={{ fontSize: "1.25rem", padding: "1rem 2rem" }}>
+
+              {/* CTA Button */}
+              <Flex
+                className="button-container"
+                width="100%"
+                justifyContent="center"
+              >
+                <Link
+                  to={"/join-us"}
+                  className="landing-button super-enlarged-button"
+                  style={{ fontSize: "1.25rem", padding: "1rem 2rem" }}
+                >
                   <span>Join DevSoc</span>
                   <div className="button-arrow-circle">
                     <svg
@@ -104,14 +111,14 @@ const Hero = () => {
               </Flex>
             </Flex>
           </Box>
-          
-          {/* Right side: Animation */}
-          <Box 
-            flex={{ md: "0 0 300px" }} 
+
+          {/* Right side: Animation (visible only on desktop) */}
+          <Box
+            flex={{ md: "0 0 300px" }}
             display={{ base: "none", md: "block" }}
             position="relative"
           >
-            <Animation4 />
+            {/* <Animation4 /> */}
           </Box>
         </Flex>
       </Box>

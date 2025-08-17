@@ -6,6 +6,7 @@ import PlasmaWaveV2 from "../components/landing/PlasmaWave/PlasmaWaveV2";
 import Announcement from "../components/common/Misc/Announcement";
 import Footer from "../components/landing/Footer/Footer";
 import Hero from "../components/landing/Hero/Hero";
+import About from "../components/landing/AboutUs/AboutUs";
 import Terminal from "../components/landing/Terminal/Terminal";
 import CodeComparison from "../components/landing/CodeComparison/CodeComparison";
 import {
@@ -63,20 +64,6 @@ const LandingPage = () => {
     },
   ];
 
-  // Code comparison samples
-  const beforeCode = `// Welcome to Developer Society 🚀
-console.log("Joining global dev network...");
-console.log("Exploring tutorials and resources...");
-console.log("Pair-programming sessions initialized...");
-return "DevSoc: Where developers code, collaborate, and conquer together!";
-`;
-
-  const afterCode = `// Deploying to Developer Society 🌐
-console.log("Syncing with community knowledge base...");
-console.log("Running 'share --ideas' command...");
-return "✅ Developer Society setup complete — Let's build something amazing!";
-`;
-
   return (
     <section className="landing-wrapper relative">
       <title>Developer Society - Empowering Student Developers</title>
@@ -120,10 +107,10 @@ return "✅ Developer Society setup complete — Let's build something amazing!"
 
         {/* Foreground content */}
         <div className="content-container center-aligned relative z-20">
-          <Container maxW="1900px" py={5} zIndex={10}>
-            <VStack spacing={40} mb={16} className="magic-cui-section" align="stretch">
+          <Container maxW="1900px" py={2} zIndex={10}>
+            <VStack spacing={0} mb={0} className="magic-cui-section" align="stretch">
               {/* Terminal Section */}
-              <Box mb={10}>
+              <Box mb={0}>
                 <Center flexDirection="column" maxW="1200px" mx="auto">
                   <Flex
                     direction={{ base: "column", md: "row" }}
@@ -182,68 +169,10 @@ return "✅ Developer Society setup complete — Let's build something amazing!"
                   </Flex>
                 </Center>
               </Box>
-
-              {/* Code Comparison Section */}
-              <Box mt={10}>
-                <Center flexDirection="column" maxW="1400px" mx="auto">
-                  <Flex
-                    direction={{ base: "column", md: "row" }}
-                    align="center"
-                    justify="space-between"
-                    gap={{ base: 10, md: 20 }}
-                    w="100%"
-                  >
-                    <MotionBox
-                      flex={{ md: 1.5 }}
-                      maxW={{ base: "100%", md: "800px" }}
-                      w="100%"
-                      mr={{ md: 4 }}
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.5, delay: 0.6 }}
-                    >
-                      <CodeComparison
-                        beforeCode={beforeCode}
-                        afterCode={afterCode}
-                        language="javascript"
-                      />
-                    </MotionBox>
-                    <VStack
-                      align="flex-start"
-                      spacing={6}
-                      flex={{ md: "0 0 380px" }}
-                      justifyContent="center"
-                      ml={{ md: 4 }}
-                    >
-                      <MotionHeading
-                        as="h3"
-                        size="lg"
-                        color="purple.400"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.6, delay: 0.7 }}
-                      >
-                        Modern Development
-                      </MotionHeading>
-                      <MotionText
-                        color="whiteAlpha.900"
-                        fontSize={{ base: "lg", md: "xl" }}
-                        fontWeight="medium"
-                        initial={{ opacity: 0, x: -30 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.7, delay: 0.9 }}
-                      >
-                        DevSoc tools streamline your development process, turning
-                        hours of setup into seconds of productivity.
-                      </MotionText>
-                    </VStack>
-                  </Flex>
-                </Center>
-              </Box>
             </VStack>
           </Container>
-
           <FeatureCards />
+          <About />
           <StartBuilding />
           <Footer />
         </div>

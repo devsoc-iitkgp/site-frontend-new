@@ -1,4 +1,4 @@
-import { Route, BrowserRouter as Router, Routes, useLocation } from 'react-router-dom'
+import { Route, BrowserRouter as Router, Routes, useLocation, useNavigate } from 'react-router-dom'
 import { SearchProvider } from './components/context/SearchContext/SearchContext';
 import { LanguageProvider } from './components/context/LanguageContext/LanguageContext'
 import { TransitionProvider } from './components/context/TransitionContext/TransitionContext';
@@ -14,12 +14,21 @@ import LandingPage from './pages/LandingPage'
 import CategoryPage from './pages/CategoryPage'
 import ShowcasePage from './pages/ShowcasePage';
 import Announcement from './components/common/Misc/Announcement';
-import AboutPage from './pages/AboutPage';
 import TeamPage from './pages/TeamPage';
-// import ContactPage from './pages/ContactPage';
 
 function AppContent() {
   const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Handle scroll to about section when /about path is accessed
+    if (location.pathname === '/about') {
+      navigate('/');
+      setTimeout(() => {
+        document.getElementById('about-section')?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  }, [location.pathname, navigate]);
 
   const getActiveItem = () => {
     if (location.pathname === '/') return 'home';
@@ -36,9 +45,6 @@ function AppContent() {
         <Route exact path="/" element={<LandingPage />} />
         <Route exact path="/showcase" element={<ShowcasePage />} />
         <Route exact path="/team" element={<TeamPage />} />
-
-        <Route path="/about" element={<AboutPage />} />
-        {/* <Route path="/contact" element={<ContactPage />} /> */}
         <Route path="/:category/:subcategory" element={
           <SearchProvider>
             <LanguageProvider>

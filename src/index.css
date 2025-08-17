@@ -317,20 +317,20 @@ img:hover {
 .magic-cui-section {
   position: relative;
   z-index: 10;
-  margin-top: 2rem;
+  margin-top: 0 !important;
 }
 
 .magic-cui-section::before {
   content: '';
   position: absolute;
-  top: -30px;
+  top: 0;
   left: 0;
+  margin-top: 0 !important;
   right: 0;
   height: calc(100% + 60px);
   background: radial-gradient(ellipse at center, rgba(138, 43, 226, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
   z-index: -1;
   pointer-events: none;
-  border-radius: 20px;
 }
 
 /* Create floating effect on hover */

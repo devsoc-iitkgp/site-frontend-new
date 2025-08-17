@@ -10,10 +10,6 @@ const StartBuilding = () => {
           <p className="start-building-subtitle">
             Collaborate, code, and create — explore tools, resources, and projects built by developers, for developers.
           </p>
-
-          <Link to="/text-animations/split-text" className="start-building-button">
-            Explore Resources
-          </Link>
         </div>
       </div>
     </section>

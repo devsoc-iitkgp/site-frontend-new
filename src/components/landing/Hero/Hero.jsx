@@ -84,12 +84,12 @@ const Hero = () => {
                 width="100%"
                 justifyContent="center"
               >
-                <Link
-                  to={"/join-us"}
+                <a
+                  href="mailto:devsoc.iitkgp@gmail.com"
                   className="landing-button super-enlarged-button"
                   style={{ fontSize: "1.25rem", padding: "1rem 2rem" }}
                 >
-                  <span>Join DevSoc</span>
+                  <span>Contact DevSoc</span>
                   <div className="button-arrow-circle">
                     <svg
                       width="20"
@@ -107,7 +107,7 @@ const Hero = () => {
                       />
                     </svg>
                   </div>
-                </Link>
+                </a>
               </Flex>
             </Flex>
           </Box>

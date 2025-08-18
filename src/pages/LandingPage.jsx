@@ -65,7 +65,7 @@ const LandingPage = () => {
 
   return (
     <section className="landing-wrapper relative">
-      <title>Developer Society - Empowering Student Developers</title>
+      <title>Developer's Society - Empowering Student Developers</title>
 
       {/* 🌌 Fullscreen Particles Background */}
       <div className="fixed inset-0 z-0 pointer-events-none">

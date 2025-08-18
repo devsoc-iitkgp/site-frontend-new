@@ -55,7 +55,7 @@ const Hero = () => {
                 >
                   <ResponsiveSplitText
                     isMobile={isMobile}
-                    text="Developer Society"
+                    text="Developer's Society"
                     className="hero-split main-title"
                     splitType="chars"
                     delay={30}
@@ -85,7 +85,7 @@ const Hero = () => {
                 justifyContent="center"
               >
                 <a
-                  href="mailto:devsoc.iitkgp@gmail.com"
+                  href="https://api.whatsapp.com/send/?phone=918795675974&text=Hey%2C%20I%27m%20interested%20in%20DevSoc%21&type=phone_number&app_absent=0 "
                   className="landing-button super-enlarged-button"
                   style={{ fontSize: "1.25rem", padding: "1rem 2rem" }}
                 >

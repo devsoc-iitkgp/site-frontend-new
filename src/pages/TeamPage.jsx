@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./TeamPage.css";
 import Squares from "../content/Backgrounds/Squares/Squares";
 import LightRays from "../content/Backgrounds/LightRays/LightRays";
 import Particles from "../content/Backgrounds/Particles/Particles"; // 👈 particle background
 
 const TeamPage = () => {
+  // Set tab name same as home page and scroll to top on mount
+  useEffect(() => {
+    document.title = "Developer's Society - Empowering Student Developers"; // Change to your home page title if different
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, []);
+
   const teamMembers = [
     {
       id: 1,
@@ -15,7 +21,7 @@ const TeamPage = () => {
       status: "Coding",
       bio: "Passionate about innovation and technology with over 10 years of experience in the industry.",
       contactText: "Contact",
-      avatar: "public/assets/pics/harsh.jpg",
+      avatar: "../assets/pics/harsh.jpg",
     },
     {
       id: 2,
@@ -26,7 +32,7 @@ const TeamPage = () => {
       status: "Online",
       bio: "Full-stack developer with expertise in React, Node.js, and cloud architecture.",
       contactText: "Message",
-      avatar: "public/assets/pics/nigam.jpeg",
+      avatar: "../assets/pics/nigam.jpeg",
     },
     {
       id: 3,
@@ -37,7 +43,7 @@ const TeamPage = () => {
       status: "Online",
       bio: "Creative professional with a keen eye for detail and a passion for user-centric design.",
       contactText: "Connect",
-      avatar: "public/assets/pics/jain.jpeg",
+      avatar: "../assets/pics/jain.jpeg",
     },
     {
       id: 4,
@@ -48,7 +54,7 @@ const TeamPage = () => {
       status: "Online",
       bio: "Problem solver who loves building efficient and scalable solutions.",
       contactText: "Collaborate",
-      avatar: "public/assets/pics/kashyap.jpeg",
+      avatar: "../assets/pics/kashyap.jpeg",
     },
     {
       id: 5,
@@ -59,7 +65,7 @@ const TeamPage = () => {
       status: "Online",
       bio: "Strategic thinker focused on delivering value through innovative products.",
       contactText: "Schedule Meeting",
-      avatar: "public/assets/pics/soni.jpeg",
+      avatar: "../assets/pics/soni.jpeg",
     },
     {
       id: 6,
@@ -70,7 +76,7 @@ const TeamPage = () => {
       status: "Online",
       bio: "Creative marketer with a data-driven approach to growing business.",
       contactText: "Reach Out",
-      avatar: "public/assets/pics/yadav.jpeg",
+      avatar: "../assets/pics/yadav.jpeg",
     },
   ];
 

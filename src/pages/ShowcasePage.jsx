@@ -27,12 +27,12 @@ const ShowcasePage = () => {
       url: 'https://news-views-eight.vercel.app/',
     },
 
-  ];
+  ];  
 
   return (
     <>
       <section className="showcase-wrapper">
-        <title>DevSoc - Showcase 🎉</title>
+        <title>Developer's Society - Empowering Student Developers</title>
 
         <div className="showcase-header">
           <h1 className="showcase-title">Community Showcase</h1>

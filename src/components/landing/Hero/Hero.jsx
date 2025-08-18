@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import SplitText from "../../../content/TextAnimations/SplitText/SplitText";
 import { Box, Center, Flex, Text } from "@chakra-ui/react";
 import Animation4 from "../Animation/Animation4";
 

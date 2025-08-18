@@ -43,9 +43,6 @@ const ARROW_ICON_PROPS = {
   transform: "rotate(-45deg)",
 };
 
-const scrollToTop = () => window.scrollTo(0, 0);
-const slug = (str) => str.replace(/\s+/g, "-").toLowerCase();
-
 const Sidebar = () => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const [linePosition, setLinePosition] = useState(null);
@@ -221,24 +218,37 @@ const Sidebar = () => {
     return () => sidebarElement.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleScrollToTop = (e) => {
+    e.preventDefault();
+    closeDrawer();
+    if (location.pathname !== '/') {
+      navigate('/', { replace: true });
+      setTimeout(() => {
+        window.dispatchEvent(new Event('scroll-to-top'));
+      }, 300);
+    } else {
+      window.dispatchEvent(new Event('scroll-to-top'));
+    }
+  };
+
+  const handleHomeClick = (e) => {
+    e.preventDefault();
+    closeDrawer();
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 200);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
-      <Box
-        display={{ md: "none" }}
-        position="fixed"
-        top={0}
-        left={0}
-        zIndex="overlay"
-        w="100%"
-        bg="#060010"
-        p="1em"
-      >
-        <Flex
-          align="center"
-          justify="space-between"
-          gap="1em"
-        >
-          <Link to="/">
+      <Box display={{ md: "none" }} position="fixed" top={0} left={0} zIndex="overlay" w="100%" bg="#060010" p="1em">
+        <Flex align="center" justify="space-between" gap="1em">
+          <Link to="/" onClick={handleScrollToTop}>
             <Image src={Logo} h="32px" alt="React Bits logo" />
           </Link>
 
@@ -285,7 +295,7 @@ const Sidebar = () => {
               className="sidebar-logo"
             >
               <Flex align="center" justify="space-between" w="100%">
-                <Link to="/">
+                <Link to="/" onClick={handleScrollToTop}>
                   <Image src={Logo} alt="Logo" h="28px" />
                 </Link>
                 <IconButton
@@ -300,6 +310,20 @@ const Sidebar = () => {
 
             <Drawer.Body pb="6em">
               <VStack align="stretch" spacing={5} mt={8}>
+                <Box>
+                  <Link
+                    to="/"
+                    onClick={handleHomeClick}
+                    className="sidebar-item"
+                    style={{
+                      fontWeight: 600,
+                      color: "#fff",
+                      position: "relative"
+                    }}
+                  >
+                    Home
+                  </Link>
+                </Box>
                 {CATEGORIES.map((cat, index) => (
                   <Category
                     key={cat.name}
@@ -498,3 +522,5 @@ const Category = memo(
 Category.displayName = "Category";
 
 export default Sidebar;
+
+

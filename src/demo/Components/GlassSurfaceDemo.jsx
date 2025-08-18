@@ -10,7 +10,6 @@ import CliInstallation from "../../components/code/CliInstallation";
 import PropTable from "../../components/common/Preview/PropTable";
 import PreviewSelect from "../../components/common/Preview/PreviewSelect";
 import PreviewSlider from "../../components/common/Preview/PreviewSlider";
-import logo from '../../assets/logos/react-bits-logo-small.svg';
 
 import { glassSurface } from "../../constants/code/Components/glassSurfaceCode";
 import GlassSurface from "../../content/Components/GlassSurface/GlassSurface";
@@ -333,11 +332,11 @@ const GlassSurfaceDemo = () => {
                   height={60}
                   {...commonGlassProps}
                 >
-                  <img
+                  {/* <img
                     src={logo}
                     alt="React Bits Logo"
                     style={{ height: '24px', borderRadius: '50px' }}
-                  />
+                  /> */}
 
                   <Box
                     display={{ base: "flex", md: "none" }}

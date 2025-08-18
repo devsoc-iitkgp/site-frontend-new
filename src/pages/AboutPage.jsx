@@ -1,8 +1,47 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import '../styles/AboutPage.css';
 
 // Animated SVG component for decorative elements
+
+function AnimatedIntro() {
+  const words = ["Innovative", "Passionate", "Creative", "Dedicated"];
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setIndex((i) => (i + 1) % words.length);
+    }, 2000);
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <div className="animated-intro">
+      <motion.h2
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5 }}
+      >
+        We are{" "}
+        <span className="highlight">
+          <AnimatePresence exitBeforeEnter>
+            <motion.span
+              key={words[index]}
+              className="animated-word"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+            >
+              {words[index]}
+            </motion.span>
+          </AnimatePresence>
+        </span>
+      </motion.h2>
+    </div>
+  );
+}
+
 const AnimatedCircle = ({ color = "#4F46E5", delay = 0 }) => (
   <motion.svg 
     width="120" 
@@ -67,30 +106,8 @@ const WavesSVG = () => (
   </motion.svg>
 );
 
-// Team member data grouped by department
-const teamData = {
-  "Leadership": [
-    { id: 1, name: "Alex Johnson", position: "CEO & Founder", image: "https://randomuser.me/api/portraits/men/32.jpg" },
-    { id: 2, name: "Maya Rodriguez", position: "COO", image: "https://randomuser.me/api/portraits/women/44.jpg" }
-  ],
-  "Development": [
-    { id: 3, name: "Chris Lee", position: "Lead Developer", image: "https://randomuser.me/api/portraits/men/22.jpg" },
-    { id: 4, name: "Taylor Smith", position: "Frontend Developer", image: "https://randomuser.me/api/portraits/women/17.jpg" },
-    { id: 5, name: "Sam Wilson", position: "Backend Developer", image: "https://randomuser.me/api/portraits/men/45.jpg" }
-  ],
-  "Design": [
-    { id: 6, name: "Jordan Chen", position: "Creative Director", image: "https://randomuser.me/api/portraits/women/28.jpg" },
-    { id: 7, name: "Riley Garcia", position: "UI/UX Designer", image: "https://randomuser.me/api/portraits/men/37.jpg" }
-  ],
-  "Marketing": [
-    { id: 8, name: "Casey Thompson", position: "Marketing Director", image: "https://randomuser.me/api/portraits/women/63.jpg" },
-    { id: 9, name: "Jamie Parker", position: "Content Strategist", image: "https://randomuser.me/api/portraits/men/57.jpg" }
-  ]
-};
 
 const AboutPage = () => {
-  const words = ["Innovative", "Passionate", "Creative", "Dedicated"];
-  
   return (
     <div className="about-page">
       {/* Hero Section with Animated Text */}
@@ -111,32 +128,7 @@ const AboutPage = () => {
         </motion.h1>
         
         <div className="animated-intro">
-          <motion.h2
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-          >
-            We are{" "}
-            <motion.span className="highlight">
-              {words.map((word, index) => (
-                <motion.span
-                  key={word}
-                  className="animated-word"
-                  initial={{ display: "none", opacity: 0, y: 20 }}
-                  animate={{ display: index === 0 ? "inline" : "none", opacity: index === 0 ? 1 : 0, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ 
-                    duration: 0.5,
-                    repeat: Infinity,
-                    repeatDelay: (words.length - 1) * 2,
-                    delay: index * 2,
-                  }}
-                >
-                  {word}
-                </motion.span>
-              ))}
-            </motion.span>
-          </motion.h2>
+          <AnimatedIntro />
         </div>
         
         <motion.p
@@ -145,142 +137,17 @@ const AboutPage = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
         >
-          We're a team dedicated to excellence and innovation. Our mission is to create solutions 
-          that empower people and organizations to achieve their full potential.
+          The Developers’ Society (DevSoc) at IIT Kharagpur is a student community that promotes coding, software development, and open-source culture. It organizes workshops, hackathons, and projects, providing a platform for students to build skills, innovate, and bridge the gap between academics and real-world tech.
         </motion.p>
+
+        <img
+        src="/us.jpg"
+        alt="Our team photo"
+        style={{ marginTop: '20px' }}
+        width={800}
+        height={200}
+      />
       </section>
-      
-      {/* Mission Section with Animated SVG */}
-      <section className="mission-section">
-        <WavesSVG />
-        
-        <motion.div 
-          className="mission-content"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2>Our Mission</h2>
-          <div className="mission-columns">
-            <div className="mission-text">
-              <p>
-                Founded in 2020, we set out with a clear purpose: to bridge the gap between technology and human needs.
-                We believe that thoughtful design and cutting-edge innovation can transform how people interact with 
-                the digital world.
-              </p>
-              <p>
-                Every project we undertake is guided by our commitment to accessibility, sustainability, and creating 
-                meaningful impact for our clients and their users.
-              </p>
-            </div>
-            <div className="mission-visual">
-              <AnimatedCircle color="#10B981" />
-            </div>
-          </div>
-        </motion.div>
-      </section>
-      
-      {/* Team Section */}
-      <section className="team-section">
-        <motion.h2
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          Meet Our Team
-        </motion.h2>
-        
-        {Object.entries(teamData).map(([department, members], deptIndex) => (
-          <motion.div 
-            key={department}
-            className="team-department"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: deptIndex * 0.2 }}
-          >
-            <h3>{department}</h3>
-            <div className="team-members">
-              {members.map((member, index) => (
-                <motion.div
-                  key={member.id}
-                  className="member-card"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.1 * index }}
-                  whileHover={{ y: -10, boxShadow: "0 12px 30px rgba(0,0,0,0.15)" }}
-                >
-                  <div className="member-photo">
-                    <img src={member.image} alt={member.name} />
-                  </div>
-                  <h4>{member.name}</h4>
-                  <p>{member.position}</p>
-                  <div className="member-socials">
-                    <a href="#" aria-label="LinkedIn"><i className="fab fa-linkedin"></i></a>
-                    <a href="#" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        ))}
-      </section>
-      
-      {/* Values Section */}
-      <section className="values-section">
-        <motion.h2
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-        >
-          Our Core Values
-        </motion.h2>
-        
-        <div className="values-grid">
-          {[
-            { icon: "🌱", title: "Growth", text: "We continuously learn and evolve." },
-            { icon: "🤝", title: "Collaboration", text: "We achieve more by working together." },
-            { icon: "💡", title: "Innovation", text: "We embrace new ideas and approaches." },
-            { icon: "🔍", title: "Quality", text: "We take pride in excellence at every level." }
-          ].map((value, index) => (
-            <motion.div
-              key={value.title}
-              className="value-card"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ scale: 1.05 }}
-            >
-              <div className="value-icon">{value.icon}</div>
-              <h3>{value.title}</h3>
-              <p>{value.text}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-      
-      {/* Join Us Section */}
-      <motion.section 
-        className="join-section"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
-        <h2>Join Our Journey</h2>
-        <p>We're always looking for talented individuals who share our values and vision.</p>
-        <motion.button 
-          className="cta-button"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          View Careers
-        </motion.button>
-      </motion.section>
     </div>
   );
 };

@@ -95,10 +95,15 @@ const Header = () => {
     </Select.Root>
   );
 
+  const handleScrollToTop = (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <Box zIndex={100} className="main-nav">
       <Flex className="nav-items" h={20} alignItems="center" justifyContent="space-between" px={4}>
-        <RouterLink to="/" className="logo">
+        <RouterLink to="/" className="logo" onClick={handleScrollToTop}>
           <Image src={Logo} alt="Logo" className="cursor-target" />
         </RouterLink>
 

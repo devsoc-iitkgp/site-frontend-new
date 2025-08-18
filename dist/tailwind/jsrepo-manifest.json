@@ -574,8 +574,8 @@
 					"subdirectory": true,
 					"list": true,
 					"files": [
-						"HyperSpeedPresets.js",
-						"Hyperspeed.jsx"
+						"Hyperspeed.jsx",
+						"HyperSpeedPresets.js"
 					],
 					"localDependencies": [],
 					"dependencies": [
@@ -618,6 +618,21 @@
 					"_imports_": {}
 				},
 				{
+					"name": "Lightning",
+					"directory": "src/tailwind/Backgrounds/Lightning",
+					"category": "Backgrounds",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"Lightning.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
 					"name": "LightRays",
 					"directory": "src/tailwind/Backgrounds/LightRays",
 					"category": "Backgrounds",
@@ -631,21 +646,6 @@
 					"dependencies": [
 						"ogl@^1.0.11"
 					],
-					"devDependencies": [],
-					"_imports_": {}
-				},
-				{
-					"name": "Lightning",
-					"directory": "src/tailwind/Backgrounds/Lightning",
-					"category": "Backgrounds",
-					"tests": false,
-					"subdirectory": true,
-					"list": true,
-					"files": [
-						"Lightning.jsx"
-					],
-					"localDependencies": [],
-					"dependencies": [],
 					"devDependencies": [],
 					"_imports_": {}
 				},

@@ -575,8 +575,8 @@
 					"subdirectory": true,
 					"list": true,
 					"files": [
-						"HyperSpeedPresets.ts",
-						"Hyperspeed.tsx"
+						"Hyperspeed.tsx",
+						"HyperSpeedPresets.ts"
 					],
 					"localDependencies": [],
 					"dependencies": [
@@ -619,6 +619,21 @@
 					"_imports_": {}
 				},
 				{
+					"name": "Lightning",
+					"directory": "src/ts-tailwind/Backgrounds/Lightning",
+					"category": "Backgrounds",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"Lightning.tsx"
+					],
+					"localDependencies": [],
+					"dependencies": [],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
 					"name": "LightRays",
 					"directory": "src/ts-tailwind/Backgrounds/LightRays",
 					"category": "Backgrounds",
@@ -632,21 +647,6 @@
 					"dependencies": [
 						"ogl@^1.0.11"
 					],
-					"devDependencies": [],
-					"_imports_": {}
-				},
-				{
-					"name": "Lightning",
-					"directory": "src/ts-tailwind/Backgrounds/Lightning",
-					"category": "Backgrounds",
-					"tests": false,
-					"subdirectory": true,
-					"list": true,
-					"files": [
-						"Lightning.tsx"
-					],
-					"localDependencies": [],
-					"dependencies": [],
 					"devDependencies": [],
 					"_imports_": {}
 				},

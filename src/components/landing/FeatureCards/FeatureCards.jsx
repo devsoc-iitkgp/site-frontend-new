@@ -245,27 +245,27 @@ const FeatureCards = () => {
             <div className="messages-gif-wrapper">
               <img src="/assets/messages.gif" alt="Community chat animation" className="messages-gif" />
             </div>
-            <h2>{isMobile ? "10k" : <CountUp to={10000} />}+</h2>
+            <h2>Resources</h2>
             <h3>Active Developers</h3>
-            <p>Collaborating daily in projects, meetups, and hackathons</p>
+            <p>Access premium tools like Cursor, AWS, and other developer resources — all provided free for our members.</p>
           </ParticleCard>
 
           <ParticleCard className="feature-card card2" disableAnimations={isMobile}>
             <div className="components-gif-wrapper">
               <img src="/assets/components.gif" alt="Open source animation" className="components-gif" />
             </div>
-            <h2>{isMobile ? "500" : <CountUp to={500} />}+</h2>
-            <h3>Open Source Contributions</h3>
-            <p>Code, ideas, and designs shared freely by the community</p>
+            <h2>What’s Coming</h2>
+            <h3>Workshops, hackathons and more</h3>
+            <p>Workshops, open-source projects, and a space for students who just love building things."</p>
           </ParticleCard>
 
           <ParticleCard className="feature-card card4" disableAnimations={isMobile}>
             <div className="switch-gif-wrapper">
               <img src="/assets/switch.gif" alt="Event switch animation" className="switch-gif" />
             </div>
-            <h2>{isMobile ? "50" : <CountUp to={50} />}+</h2>
-            <h3>Events & Hackathons</h3>
-            <p>From casual coding nights to large-scale tech competitions</p>
+            <h2>Who are we?</h2>
+            <h3>A community of developers</h3>
+            <p>A bunch of developers from IIT KGP who like experimenting, learning, and building together — without the boring formalities."</p>
           </ParticleCard>
         </div>
       </div>

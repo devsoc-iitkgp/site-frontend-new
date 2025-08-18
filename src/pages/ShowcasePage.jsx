@@ -11,30 +11,22 @@ const ShowcasePage = () => {
 
   const showcaseItems = [
     {
-      name: 'Devraj',
-      url: 'https://devrajchatribin.com/about',
-      using: '<CountUp />'
+      name: 'cv-genie',
+      url: 'https://cv-genie.onrender.com/',
     },
     {
-      name: 'Abdullah Shafiq',
-      url: 'https://resume-tex.vercel.app',
-      using: '<Squares />'
+      name: 'MailCold',
+      url: 'https://mail-cold-hgur.vercel.app/',
     },
     {
-      name: 'Oscar Hernandez',
-      url: 'https://oscarhernandez.vercel.app',
-      using: '<LetterGlitch />'
+      name: 'Harsh Portfolio',
+      url: 'https://portfolio-rust-ten-23.vercel.app/',
     },
     {
-      name: 'Afaq Razaq',
-      url: 'https://www.evolvion.io/',
-      using: '<SpotlightCard />'
+      name: 'News Views',
+      url: 'https://news-views-eight.vercel.app/',
     },
-    {
-      name: 'Jimmy',
-      url: 'https://about.jimmy-blog.top/',
-      using: '<Squares />'
-    }
+
   ];
 
   return (
@@ -47,7 +39,7 @@ const ShowcasePage = () => {
           <p className="showcase-subtitle">See how developers around the KGP showcasing their projects</p>
           <FadeContent blur delay={500}>
             <a
-              href='https://docs.google.com/forms/d/e/1FAIpQLSdlzugJovfr5HPon3YAi8YYSSRuackqX8XIXSeeQmSQypNc7w/viewform?usp=dialog'
+              href='https://docs.google.com/forms/d/e/1FAIpQLSeYEcy5of5QB1nMTQxOggODqyEg0Kirb1ZW08g7sb6_FAe1Yw/viewform?usp=header'
               target="_blank"
               rel='noreferrer'
               className="landing-button"
@@ -69,15 +61,11 @@ const ShowcasePage = () => {
                 <img className="showcase-img" src={`https://davidhaz.com/react-bits-showcase/showcase-${index + 1}.webp`} alt={`Showcase website submitted by: ${item.name ? item.name : 'Anonymous'}`} />
                 <div className="showcase-info">
                   {item.name && <Text className="author">{item.name}</Text>}
-                  <Text className="using">Using {item.using}</Text>
                 </div>
               </Box>
             )}
 
-            <div className="grid-item"></div>
-            <div className="grid-item"></div>
-            <div className="grid-item"></div>
-            <div className="grid-item"></div>
+       
           </div>
         </FadeContent>
 

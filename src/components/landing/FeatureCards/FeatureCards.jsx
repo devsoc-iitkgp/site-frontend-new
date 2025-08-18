@@ -1,6 +1,7 @@
 import { useRef, useEffect, useCallback, useState } from "react";
 import { gsap } from "gsap";
 import "./FeatureCards.css";
+import CountUp from "../../../content/TextAnimations/CountUp/CountUp";
 
 // Particle card effect
 const ParticleCard = ({ children, className = "", disableAnimations = false }) => {

@@ -10,9 +10,6 @@ import PreviewSelect from "../../components/common/Preview/PreviewSelect";
 import PreviewSwitch from "../../components/common/Preview/PreviewSwitch";
 import Dependencies from '../../components/code/Dependencies';
 
-import logoDark from "../../assets/logos/react-bits-logo-small-black.svg";
-import logoLight from "../../assets/logos/react-bits-logo-small.svg";
-
 import PillNav from "../../content/Components/PillNav/PillNav";
 import { pillNav } from "../../constants/code/Components/pillNavCode";
 
@@ -97,7 +94,7 @@ const PillNavDemo = () => {
 
   const themeConfigs = {
     light: {
-      logo: logoLight,
+      logo: "", // Use empty string or a placeholder
       baseColor: "#000",
       pillColor: "#f0f0f0",
       hoveredPillTextColor: "#fff",
@@ -105,7 +102,7 @@ const PillNavDemo = () => {
       backgroundColor: "#f0f0f0"
     },
     dark: {
-      logo: logoDark,
+      logo: "",
       baseColor: "#fff",
       pillColor: "#060010",
       hoveredPillTextColor: "#000",
@@ -113,7 +110,7 @@ const PillNavDemo = () => {
       backgroundColor: "#060010"
     },
     color: {
-      logo: logoDark,
+      logo: "",
       baseColor: "#B19EEF",
       pillColor: "#060010",
       hoveredPillTextColor: "#060010",

@@ -54,7 +54,7 @@ const DisplayHeader = ({ activeItem }) => {
         <div className="nav-cta-group">
           <nav className="landing-nav-items" ref={navRef}>
             <Link
-              className={`nav-link ${activeItem === 'home' && 'active-link'}`}
+              className="nav-link"
               to="/"
               onClick={handleHomeClick}
             >
@@ -62,7 +62,7 @@ const DisplayHeader = ({ activeItem }) => {
             </Link>
             <Link className='nav-link' to="/about">About</Link>
             <Link className='nav-link' to="/team">Team</Link>
-            {/* <Link className={`nav-link ${activeItem === 'showcase' && 'active-link'}`} to="/showcase">Showcase</Link> */}
+            <Link className="nav-link" to="/showcase">Showcase</Link>
           </nav>
 
         
